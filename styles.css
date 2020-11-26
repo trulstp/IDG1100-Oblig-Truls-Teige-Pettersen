@@ -1,0 +1,13 @@
+body {
+    background-color: lightgrey;
+}
+code {
+    white-space: pre-line;
+}
+p {
+      white-space: pre-line;   
+}
+h1 {
+    background-color: crimson;
+    padding: 20px 0 20px 0;
+}

@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Obligatory Assignment 1 Grunnleggende Web</title>
+    <link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+    <h1>IDG1100 OBLIG</h1>
+    <h3>
+        1. What components are part of the Von Neuman Architecture
+    </h3>
+    <p>
+        answer: the components that form the Von Neuman Architecture is: 
+        -a processing unit that contrain an artihmetic logic unit and processor registers
+        -A control unit that contains an instruction register and program counter
+        -Memory that stores data and instructions
+        -External mass storage
+        -Input and output mechanisms
+    </p>
+    <h3>
+        2. What is user space?
+    </h3>
+    <p>
+        answer: User space refers to all code that runs outside the operating system's kernel, 
+        as well as the various programs and libraries that the operating system uses to interact with the kernel</p>
+    <h3>
+        3. What is the shell?
+    </h3>
+    <p>
+        answer: a shell is a user interface for access to an operating system's services.
+        the shell is a powerful tool for manipulating data and executing several applications under certain conditions
+    </p>
+    <h3>
+        4. Where is the shell located?
+    </h3>
+    <p>
+        answer: The shell resides in the user space since it can be accessed by the users  
+    </p>
+    <h3>
+        5. What is the main task of the shell?
+    </h3>
+    <p>
+        answer:the shells main task is to read commands and to run other programs
+    </p>
+    <h3>
+        6.What is the octal representation of a file that can be read and written only by its owner?
+    </h3>
+    <p>
+        0600
+    </p>
+    <h3>
+        7.In UNIX systems, what is the common name of the special user that can access and modify every file?
+    </h3>
+    <p>
+        The root user
+    </p>
+    <h3>
+        8.Which file permission classes are available in UNIX systems?
+    </h3>
+    <p>
+        answer: user, group, other
+    </p>
+    <h3>
+        9.As of 2020, which percentage of servers have UNIX-like OS?
+    </h3>
+    <p>
+        40%
+    </p>
+    <h3>
+        10.The command ssh will:
+    </h3>
+    <p>
+        answer: The ssh command provides a secure encrypted connection between two hosts over an insecure network. 
+        This connection can also be used for terminal access, file transfers, and for tunneling other applications.
+    </p>
+    <h3>
+        11.UNIX Command: access your current working directory
+    </h3>
+    <code>
+        pwd
+    </code>
+    <h3>
+        12.UNIX Command: rename files (give an example)
+    </h3>
+    <code>
+        $mv filename1 filename2.
+    </code>
+    <p>
+        if the file is not in your current directory make sure to specify the full path of the file:
+    </p>
+    <code>
+        $mv /home/example1.txt /home/example2.txt
+    </code>
+    <h3>
+        13.UNIX Command: schedule the execution of programs in the future
+    </h3>
+    <code>
+        crontab -e
+    </code>
+    <h3>
+        14.UNIX Command: Forcefully shutdown the command with process ID 123
+    </h3>
+    <code>
+        kill 123
+    </code>
+    <h3>
+        15.UNIX Command:access your root user
+    </h3>
+    <code>
+        sudo -s
+    </code>
+    <h3>
+        16. Crontab scheduled: At minute 30 on Sunday.
+    </h3>
+    <code>
+        30 * * * 7
+    </code>
+    <h3>
+        17. Crontab scheduled: At minute 30 on day-of-month 15.
+    </h3>
+    <code>
+        30 * 15 * *
+    </code>
+    <h3>
+        18. Crontab scheduled: At 05:30 on every day-of-week from Sunday through Monday in June.
+    </h3>
+    <code>
+        30 05 * 7 1-7
+    </code>
+    <h3>
+        19.Script:printyour name and date
+    </h3>
+    <code>
+        #!/bin/bash
+read -p "Please enter your name: " name
+NOW=$(date +"%m-%d-%y")
+echo "Your name is: " $name "and the date is" $NOW
+    </code>
+    <h3>
+        20.Script:add two numeric values, print the result
+    </h3>
+    <code>
+        #!/bin/bash
+echo "please could you enter the first no"; read a
+echo "please enter the second no"; read b
+c=$((a+b))
+echo "the answer is $c "
+    </code>
+    <h3>
+        21.Script:inputs username, prints “USERNAMEstored”
+    </h3>
+    <code>
+        #!/bin/bash
+read -p "please put in your username " username
+echo $username"stored"
+    </code>
+    <h3>
+        22.Script:Store the output of the command “hostname” in a variable. 
+Display “This script is running on _.” where “_” is the output of the “hostname” command.
+    </h3>
+    <code>
+        #!/bin/bash
+$hostname=`hostname`
+echo "This script is running on" $hostname
+    </code>
+    <h3>
+        23.Script:Store the output of the workingdirectory (from where the script is run) in a variable then print the variable.
+    </h3>
+    <code>
+        #!/bin/bash
+workingdirectory=`pwd`
+echo "the working directory is" $workingdirectory
+    </code>
+    <h3>
+        
+24.Create a step by step tutorial on how to create a cronjob that prints “Task scheduled at”+ DATE. 
+Cronjob is scheduled every 30 minutes on today’s date(only today).
+    </h3>
+    <p>
+        Answer: 
+1) First open a terminal ex:(Ubuntu). Then type in sudo -s then enter, 
+it will then ask you for you password you made when first starting ubuntu.
+ this will let you start the cronjob later.
+2) next you will type in crontab -e to open the crontab 
+3) it will ask you to select an editor, choose number 1 (/bin/nano since its the easiest) type 1 then enter.
+4) hold down the down-arrow until you past all the blue text then you can start writing your cronjob.
+5) write in at the bottom: 30 * 25 11 * echo "Task scheduled at $(date) >> /home/example.txt
+6) exit the crontab by typing ctrl+x
+7)start the cronjob by typing service cron start
+    </p>
+    <h3>
+        25.Create a script that takes an input (letter or number) that will display the answer of a question. 
+The script should when started list a menu for the user with the different questions that can be chosen 
+and which corresponding letter the user will have to give as input to display the answer of the desired question. 
+One of the possible inputs the user should be able to make is "q" for quitting the script. 
+The menu should also have a defaultcase where all the items is displayed again,
+or no changes is made if the user gives an invalid input.Hint: use a switch case to be able to handle the menu. 
+Each option in the menu should lead to an echo of the answer
+    </h3>
+    <code>
+        #!/bin/sh
+for i in 123
+do
+echo "press 1 to see the capital in Norway (q to quit)"
+echo "press 2 to see the capital in Sweden (q to quit)"
+echo "press 3 to see the capital in Denmark (q to quit)"
+while :
+do
+ read INPUT_STRING
+ case $INPUT_STRING in
+        1)
+                echo "The capital in Norway is Oslo press 4 to see the questions again"
+                ;;
+        2)
+                echo "The capital in Sweden is Stockholm press 4 to see the questions again"
+                ;;
+        3)
+                echo "The capital in Denmark is Copenhagen press 4 to see the questions again "
+                ;;
+        q)
+                break
+                ;;
+        4)
+                echo "press 1 to see the capital in Norway (q to quit)"
+                echo "press 2 to see the capital in Sweden (q to quit)"
+                echo "press 3 to see the capital in Denmark (q to quit)"
+                ;;
+        *)
+                echo "You did not enter a valid command press 4 to see the questions again or q to quit"
+                ;;
+ esac
+done
+done
+    </code>
+</body>
+</html>
